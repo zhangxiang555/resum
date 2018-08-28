@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/work.css">
+	</head>
+	<body>
+		<div class="all">
+		<div class="container">			
+			<div class="pic1" id="p1" onclick="on_click1();">
+				<div class="txt" id="txt1">
+				</br></br></br></br>基</br>本</br>信</br>息
+				</div>
+				<div class="pic-content" id="p1-t">
+					<br><br/><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本信息
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;姓名：张祥
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;现居地：杭州市
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;联系电话：18816220750
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;电子邮箱：1264465084@qq.com
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;求职意向：大数据分析师
+					<hr>
+				</div>
+			</div>
+			<div class="pic2" id="p2" onclick="on_click2();">
+				<div class="txt" id="txt2">
+					
+					</br></br></br></br>教</br>育</br>背</br>景
+				</div>
+				<div class="pic-content" id="p2-t">
+					<br/><br/><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教育背景
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;2015-现今&nbsp;
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;中国计量大学
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;本科&nbsp;&nbsp;&nbsp;&nbsp;信息与计算科学专业
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;主修课程：Java,数据库等
+					<hr/>
+				</div>
+			</div>
+			<div class="pic3" id="p3" onclick="on_click3();">
+				<div class="txt" id="txt3">
+					
+					</br></br></br></br>职</br>业</br>技</br>能
+				</div>
+				<div class="pic-content" id="p3-t">
+					<br/><br/><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;职业技能
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;熟悉java语言，有良好的编程习惯
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;了解数据库，能对mysql数据库进行基本操作
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;英语cet-4，掌握常用的日常口语。
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;全国计算机二级，熟练掌握Word等办公软件
+					<hr/>
+				</div>
+			</div>
+			<div class="pic4" id="p4" onclick="on_click4();">
+				<div class="txt" id="txt4">
+					
+					</br></br></br></br>校</br>内</br>荣</br>誉
+				</div>
+				<div class="pic-content" id="p4-t">
+					<br/><br/><br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;校内荣誉
+					<hr/>
+					&nbsp;&nbsp;&nbsp;&nbsp;全国大学生数模竞赛省二等奖
+					<hr/>
+				</div>
+			</div>
+			<div class="pic5" id="p5" onclick="on_click5();">
+				<div class="txt" id="txt5">
+					
+					</br></br></br></br>自</br>我</br>评</br>价
+				</div>
+				<div class="pic-content" id="p5-t">
+				<br/><br/><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自我评价
+				<hr/>
+				&nbsp;&nbsp;&nbsp;&nbsp;本人性格开朗、为人诚恳、乐观向上、兴趣广泛、善于思考、拥有较强的适应能力、并具有
+				<hr/>
+				&nbsp;&nbsp;&nbsp;&nbsp;较强的管理策划与组织管理协调能力
+				<hr/>
+				</div>
+			</div>
+		</div>
+		<div>
+		<script>
+			window.onload = function(){
+				
+			}
+			var flag = 0;
+			var p1 = document.getElementById("p1");
+			var p2 = document.getElementById("p2");
+			var p3 = document.getElementById("p3");
+			var p4 = document.getElementById("p4");
+			var p5 = document.getElementById("p5");
+			function on_click1(){
+					if(flag == 0){
+						document.getElementById("txt1").style.display="none";
+						document.getElementById("txt2").style.display="none";
+						document.getElementById("txt3").style.display="none";
+						document.getElementById("txt4").style.display="none";
+						document.getElementById("txt5").style.display="none";
+						var y=500;
+						var i = window.setInterval(function(){
+							y -=30;
+							p2.style.height = y+'px';
+							p3.style.height = y+'px';
+							p4.style.height = y+'px';
+							p5.style.height = y+'px';
+							if(y < 0){
+								p2.style.width = 0+'px';
+								p3.style.width = 0+'px';
+								p4.style.width = 0+'px';
+								p5.style.width = 0+'px';
+								clearInterval(i);
+								var j = 180;
+								var z = window.setInterval(function(){
+									j += 25;
+									p1.style.width = j+'px';
+									if(j >=980){
+										clearInterval(z);
+										document.getElementById("p1-t").style.display="block";
+										flag = 1;										
+									}
+								},25);
+							}
+						},30);
+					}else if(flag == 1){
+						flag = 0;
+						var j = 980;
+						document.getElementById("p1-t").style.display="none";
+						var z = window.setInterval(function(){
+							j -= 25;
+							p1.style.width = j+'px';
+							if(j <=180){
+								clearInterval(z);
+
+								p2.style.width = 180+'px';
+								p3.style.width = 180+'px';
+								p4.style.width = 180+'px';
+								p5.style.width = 180+'px';
+								var y = 0;
+								var i = window.setInterval(function(){
+									y +=10;
+									p2.style.height = y+'px';
+									p3.style.height = y+'px';
+									p4.style.height = y+'px';
+									p5.style.height = y+'px';
+									if(y >= 500){
+										
+										clearInterval(i);
+										
+										document.getElementById("txt1").style.display="block";
+										document.getElementById("txt2").style.display="block";
+										document.getElementById("txt3").style.display="block";
+										document.getElementById("txt4").style.display="block";
+										document.getElementById("txt5").style.display="block";
+										}
+									},10);
+								}
+							},25);
+					}
+			}
+			
+			<!--  -->
+			function on_click2(){
+				if(flag==0){
+					document.getElementById("txt1").style.display="none";
+					document.getElementById("txt2").style.display="none";
+					document.getElementById("txt3").style.display="none";
+					document.getElementById("txt4").style.display="none";
+					document.getElementById("txt5").style.display="none";
+					var y=500;
+					var i = window.setInterval(function(){
+						y -=10;
+						p1.style.height = y+'px';
+						p3.style.height = y+'px';
+						p4.style.height = y+'px';
+						p5.style.height = y+'px';
+						if(y <= 0){
+							p1.style.width = 0+'px';
+							p3.style.width = 0+'px';
+							p4.style.width = 0+'px';
+							p5.style.width = 0+'px';
+							clearInterval(i);
+
+							var w = 180;
+							var x = 200;
+							var z = window.setInterval(function(){
+
+								w +=40;
+								x -=10;
+								p2.style.width = w+'px';
+								p2.style.left = x + 'px';
+								if(w >= 980){
+									clearInterval(z);
+									document.getElementById("p2-t").style.display="block";
+									flag = 1;
+								}
+							},25);
+						}
+					},10);
+				}else if(flag == 1){
+					var w = 980;
+					var x = 0;
+					flag=0;
+					document.getElementById("p2-t").style.display="none";
+					var z = window.setInterval(function(){
+						w -= 40;
+						x += 10;
+						p2.style.left = x+'px';
+						p2.style.width= w+'px';
+						if(w <=180){
+							clearInterval(z);
+							p1.style.width = 180+'px';
+							p3.style.width = 180+'px';
+							p4.style.width = 180+'px';
+							p5.style.width = 180+'px';
+							var y=0;
+							var i = window.setInterval(function(){
+								y +=10;
+								p1.style.height = y+'px';
+								p3.style.height = y+'px';
+								p4.style.height = y+'px';
+								p5.style.height = y+'px';
+									if(y >= 500){										
+										clearInterval(i);
+										document.getElementById("txt1").style.display="block";
+										document.getElementById("txt2").style.display="block";
+										document.getElementById("txt3").style.display="block";
+										document.getElementById("txt4").style.display="block";
+										document.getElementById("txt5").style.display="block";
+									}
+							},15);
+						}
+					},25);
+				}
+			}
+			function on_click3(){	
+				
+				if(flag ==0 ){
+					document.getElementById("txt1").style.display="none";
+					document.getElementById("txt2").style.display="none";
+					document.getElementById("txt3").style.display="none";
+					document.getElementById("txt4").style.display="none";
+					document.getElementById("txt5").style.display="none";
+					flag = 1;
+					var y=500;
+					var i = window.setInterval(function(){
+						y -=30;
+						p1.style.height = y+'px';
+						p2.style.height = y+'px';
+						p4.style.height = y+'px';
+						p5.style.height = y+'px';
+						if(y < 0){
+							p1.style.width = 0+'px';
+							p2.style.width = 0+'px';
+							p4.style.width = 0+'px';
+							p5.style.width = 0+'px';
+							clearInterval(i);
+							var w = 180;
+							var x = 400;
+							var z = window.setInterval(function(){
+								w += 40;
+								x -= 20;
+								p3.style.width = w+'px';
+								p3.style.left=x+'px';
+								if(w >=980){
+									clearInterval(z);
+									document.getElementById("p3-t").style.display="block";
+								}
+							},25);
+						}
+					},10);
+				}else if(flag == 1){
+					flag =0;
+					document.getElementById("p3-t").style.display="none";
+					var w = 980;
+					var x = 0;
+					var z = window.setInterval(function(){
+						w -= 40;
+						x += 20;
+						p3.style.width = w+'px';
+						p3.style.left=x+'px';
+						if(w <=180){
+							p1.style.width = 180+'px';
+							p2.style.width = 180+'px';
+							p4.style.width = 180+'px';
+							p5.style.width = 180+'px';
+							clearInterval(z);
+							var y=0;
+							var i = window.setInterval(function(){
+								y +=10;
+								p1.style.height = y+'px';
+								p2.style.height = y+'px';
+								p4.style.height = y+'px';
+								p5.style.height = y+'px';
+								if(y >= 500){
+										clearInterval(i);
+										document.getElementById("txt1").style.display="block";
+										document.getElementById("txt2").style.display="block";
+										document.getElementById("txt3").style.display="block";
+										document.getElementById("txt4").style.display="block";
+										document.getElementById("txt5").style.display="block";
+								}
+							},10);	
+						}
+					},25);
+				}
+					
+			}
+			function on_click4(){
+				if(flag == 0){
+					document.getElementById("txt1").style.display="none";
+					document.getElementById("txt2").style.display="none";
+					document.getElementById("txt3").style.display="none";
+					document.getElementById("txt4").style.display="none";
+					document.getElementById("txt5").style.display="none";
+					flag = 1;
+					var y=500;
+					var i = window.setInterval(function(){
+						y -=10;
+						p1.style.height = y+'px';
+						p2.style.height = y+'px';
+						p3.style.height = y+'px';
+						p5.style.height = y+'px';
+						if(y <= 0){
+							p1.style.width = 0+'px';
+							p2.style.width = 0+'px';
+							p3.style.width = 0+'px';
+							p5.style.width = 0+'px';
+							clearInterval(i);
+							var w = 180;
+							var x = 600;
+							var z = window.setInterval(function(){
+								w += 40;
+								x -= 30;
+								p4.style.width = w+'px';
+								p4.style.left = x+'px';
+								if(w >=980){
+									clearInterval(z);
+									document.getElementById("p4-t").style.display="block";
+								}
+							},25);
+						}
+					},10);
+				}else if(flag == 1){
+					flag = 0;
+					document.getElementById("p4-t").style.display="none";
+					var w = 980;
+					var x = 0;
+					var z = window.setInterval(function(){
+						w -= 40;
+						x += 30;
+						p4.style.width = w+'px';
+						p4.style.left = x+'px';
+						if(w <=180){
+							clearInterval(z);
+							p1.style.width = 180+'px';
+							p2.style.width = 180+'px';
+							p3.style.width = 180+'px';
+							p5.style.width = 180+'px';
+							var y=0;
+							var i = window.setInterval(function(){
+								y +=10;
+								p1.style.height = y+'px';
+								p2.style.height = y+'px';
+								p3.style.height = y+'px';
+								p5.style.height = y+'px';
+								if(y >= 500){
+									
+									clearInterval(i);
+									document.getElementById("txt1").style.display="block";
+									document.getElementById("txt2").style.display="block";
+									document.getElementById("txt3").style.display="block";
+									document.getElementById("txt4").style.display="block";
+									document.getElementById("txt5").style.display="block";
+								}
+							},10);
+						}
+					},25);
+				}
+			}
+			
+			
+			function on_click5(){
+				if(flag == 0){
+					document.getElementById("txt1").style.display="none";
+					document.getElementById("txt2").style.display="none";
+					document.getElementById("txt3").style.display="none";
+					document.getElementById("txt4").style.display="none";
+					document.getElementById("txt5").style.display="none";
+					flag = 1;
+					var y=500;
+					var i = window.setInterval(function(){
+						y -=10;
+						p1.style.height = y+'px';
+						p2.style.height = y+'px';
+						p3.style.height = y+'px';
+						p4.style.height = y+'px';
+						if(y < 0){
+							p1.style.width = 0+'px';
+							p2.style.width = 0+'px';
+							p3.style.width = 0+'px';
+							p4.style.width = 0+'px';
+							clearInterval(i);
+							var w = 180;
+							var x = 800;
+							var z = window.setInterval(function(){
+								w += 40;
+								x -= 40;
+								p5.style.left = x+'px';
+								p5.style.width= w +'px';
+								if(w >=980){
+									clearInterval(z);
+									document.getElementById("p5-t").style.display="block";
+								}
+							},25);
+						}
+					},10);
+				}else if(flag == 1){
+					flag = 0;
+					document.getElementById("p5-t").style.display="none";
+					var w = 980;
+					var x = 0;
+					var z = window.setInterval(function(){
+						w -= 40;
+						x += 40;
+						p5.style.left = x+'px';
+						p5.style.width= w +'px';
+						if(w <=180){
+							clearInterval(z);
+							p1.style.width = 180+'px';
+							p2.style.width = 180+'px';
+							p3.style.width = 180+'px';
+							p4.style.width = 180+'px';
+							var y=0;
+							var i = window.setInterval(function(){
+								y +=10;
+								p1.style.height = y+'px';
+								p2.style.height = y+'px';
+								p3.style.height = y+'px';
+								p4.style.height = y+'px';
+								if(y >= 500){
+									clearInterval(i);
+									document.getElementById("txt1").style.display="block";
+									document.getElementById("txt2").style.display="block";
+									document.getElementById("txt3").style.display="block";
+									document.getElementById("txt4").style.display="block";
+									document.getElementById("txt5").style.display="block";
+								}
+							},10);
+						}
+					},25);
+				}
+			}
+		</script>
+	</body>
+</html>
